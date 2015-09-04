@@ -18,9 +18,14 @@ class ViewController: UIViewController {
             notification.fireDate = NSDate().dateByAddingTimeInterval(NSTimeInterval(seconds));
             notification.timeZone = NSTimeZone.localTimeZone()
             notification.alertBody = "Wake up, Neo!";
-            notification.soundName = UILocalNotificationDefaultSoundName;
+            notification.soundName = "alarm29.m4a";
             UIApplication.sharedApplication().scheduleLocalNotification(notification);
         }
+    }
+    
+    override func viewDidLoad() {
+        // default is 5 sec.
+        secondsField.text = "5";
     }
 }
 
